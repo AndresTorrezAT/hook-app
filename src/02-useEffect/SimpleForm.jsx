@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
+import { Message } from './Message';
 
 export const SimpleForm = () => {
 
@@ -19,15 +20,15 @@ export const SimpleForm = () => {
     }
 
     useEffect( () => {
-        console.log('useEffect called!');
+        // console.log('useEffect called!');
     }, []); // la dependencia [] hace que el use effect solo se ejecute 1 vez (la primera vez que se monta "renderiza", solo esa)
 
     useEffect( () => {
-        console.log('formState changed!');
+        // console.log('formState changed!');
     }, [formState]);// se activa cuando formState cambia
 
     useEffect( () => {
-        console.log('email changed!');
+        // console.log('email changed!');
     }, [email]);// se activa cuando email cambia
 
     return (
@@ -52,6 +53,11 @@ export const SimpleForm = () => {
                 value={email}
                 onChange={onInputChange}
             />
+
+            {
+                (username === 'strider2') && <Message /> // solo se muestra si cambia el objeto del formState a strider2
+            }
+            
         </>
     )
 }
