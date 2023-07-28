@@ -1,6 +1,6 @@
-import { useCounter } from '../hooks/useCounter';
-import { useFetch } from '../hooks/useFetch';
 
+import { useCounter, useFetch } from '../hooks';
+import { LoadingQuote, Quote } from './';
 
 export const MultipleCustomHooks = () => {
 
@@ -12,7 +12,6 @@ export const MultipleCustomHooks = () => {
 
     // !null = true, !!null = false -> significa que si la data es null o undefined con las dobles (!!) se convierte en false y se desestructura la data
 
-
     return (
         <>
             <h1>BreakingBad Quotes</h1>
@@ -20,17 +19,8 @@ export const MultipleCustomHooks = () => {
 
             {
                 isLoading
-                    ?(
-                        <div className='alert alert-info text-center'>
-                            Loading...
-                        </div>
-                    )
-                    :(
-                        <blockquote className='blockquote text-end'>
-                            <p className='mb-1'>{ status }</p>
-                            <footer className='blockquote-footer'>{ name }</footer>
-                        </blockquote>
-                    )
+                    ? <LoadingQuote />
+                    : <Quote status={ status } name={ name } />    
             }
 
             <button 
@@ -39,7 +29,6 @@ export const MultipleCustomHooks = () => {
                 onClick={ () => { increment() }}>
                 Next quote
             </button>
-
         </>
     )
 }
