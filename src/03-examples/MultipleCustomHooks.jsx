@@ -8,7 +8,7 @@ export const MultipleCustomHooks = () => {
 
     const { data, isLoading, hasError } = useFetch(`https://rickandmortyapi.com/api/character/${counter}`);
 
-    const { name, status } = !!data && data; // si la data es diferente de vacio, mostrar "data"
+    const { name, status, species, gender, location } = !!data && data; // si la data es diferente de vacio, mostrar "data"
 
     // !null = true, !!null = false -> significa que si la data es null o undefined con las dobles (!!) se convierte en false y se desestructura la data
 
@@ -20,7 +20,7 @@ export const MultipleCustomHooks = () => {
             {
                 isLoading
                     ? <LoadingQuote />
-                    : <Quote status={ status } name={ name } />    
+                    : <Quote status={ status } name={ name } species={ species } gender={ gender } location={ location }/>    
             }
 
             <button 
