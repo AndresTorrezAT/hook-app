@@ -7,9 +7,9 @@ export const CallbackHook = () => {
     const [counter, setCounter] = useState(10);
 
     const incrementFather = useCallback( // esto siempre apunta al mismo lugar en memoria
-      () => {
+      (value) => {
         // setCounter( counter + 1 );// Esta linea se memoriza tal cual siempre que se ejecute, no cambia
-        setCounter( (value) => value + 1 );// la forma de usar es con el callback del set
+        setCounter( (c) => c + value );// la forma de usar es con el callback del set
       },
       [],
     )
