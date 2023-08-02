@@ -21,7 +21,7 @@ export const CallbackHook = () => {
 
     return (
         <>
-            <h1>useCallback Hook: { counter} </h1>
+            <h1>useCallback Hook: { counter } </h1>
             <hr />
 
             <ShowIncrement increment={ incrementFather }/>

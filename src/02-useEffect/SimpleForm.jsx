@@ -14,7 +14,7 @@ export const SimpleForm = () => {
         // console.log(event.target.value);
         const { name, value } = target;
         setFormState({
-            ...formState,
+            ...formState,// se copian todos los valores pero se remplazan por los de abajo
             [name]: value // importante para saber que input hay que modificar
         });
     }
