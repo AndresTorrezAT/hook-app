@@ -3,9 +3,6 @@ import { useTodos } from '../hooks';
 import { TodoAdd } from './TodoAdd';
 import { TodoList } from './TodoList';
 
-
-
-
 export const TodoApp = () => {
 
     const { todos, todosCount, pendingTodosCount, handleDeleteTodo, handleToggleTodo, handleNewTodo } = useTodos();
@@ -35,4 +32,3 @@ export const TodoApp = () => {
         </>
     )
 }
-// comerzar 08
