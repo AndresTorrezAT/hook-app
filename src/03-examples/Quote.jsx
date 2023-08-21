@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react"
 
 
-export const Quote = ({ status, name, species, gender, location }) => {
+export const Quote = ({ status, name, species, gender }) => {
 
   const pRef = useRef() // Guarda la referencia de algo, es como un ID
   const [boxSize, setBoxSize] = useState({ width: 0, height: 0 })
@@ -19,7 +19,6 @@ export const Quote = ({ status, name, species, gender, location }) => {
           <p className='mb-1'>estado: { status }</p>
           <p className='mb-1' ref={ pRef }>especie: { species }</p> 
           <p className='mb-1'>genero: { gender }</p>
-          <p className='mb-1'>localizacion: { location.name }</p>
           <footer className='blockquote-footer mt-2'>{ name }</footer>
       </blockquote>
 
